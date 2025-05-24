@@ -57,6 +57,60 @@ Taclick-TKLに興味を示していただきありがとうございます。
 
 ![](../assets/screenshot_exploler1.png)
 
-ここに、[]()にある、`hoge.uf2`をダウンロードし、コピーペーストしてみてください。
+開かない場合、接続した状態で、resetボタンを2回押せば起動するはずです。（もしくはresetボタンを押しながら）
 
-うまく書き込みが出来れば、キーボードとして使用できるはずです。
+ここに、[https://github.com/uNikks/Pentronic-Lab/releases/tag/taclick-tkl](https://github.com/uNikks/Pentronic-Lab/releases/tag/taclick-tkl)にある、`taclick_tkl_default.uf2`をダウンロードし、このエクスプローラーまたはRPI-RP2に入れてください。
+
+うまく書き込みが出来れば、キーボードとして使用できるはずです！
+
+### 4. アクリルプレートを用意する
+アクリルのプレートについている保護ビニールをはがしてください
+![](../assets/keyboard_7_acryliccover.jpg)
+
+### 5. 組み立てをする
+まず、ボトムプレートに対して、スペーサーを装着します。下からネジを通し、上から手でスペーサーを回します。
+![](../assets/keyboard_8_spacer.jpg)
+
+![](../assets/keyboard_9_spacer.jpg)
+
+上から見たときにこのようになればOKです。
+
+![](../assets/keyboard_10_all_spacer.jpg)
+
+この上に基板とアクリルトップフレームをネジ穴が合うように重ねます。
+
+![](../assets/keyboard_11_set_pcbtop.jpg)
+
+最後に、ねじ止めをすれば完成です！
+
+![](../assets/keyboard_12_assemblycomplete.jpg)
+
+お好みでキーキャップをつけてください。
+
+![](../assets/keyboard_13_keycap.jpg)
+
+## 4. キーマップを変更する
+キーボードはキーマップを変更することができます。
+
+### 1 remapの場合（日本語対応！）
+remapの場合、必要なファイルがもう一つあり、`taclick-remap.json`を[ここ](https://github.com/uNikks/Pentronic-Lab/releases/download/taclick-tkl/taclick-remap.json)からダウンロードします。
+
+[サリチル酸さんの記事](https://salicylic-acid3.hatenablog.com/entry/remap-manual)**のRemapにキーマップがマージされていない場合**さ参考に、キーマップを変更してください。
+
+![](../assets/remap.png)
+キーボードをカスタマイズを押す
+![](../assets/remap2.png)
+キーボードを認識させる
+![](../assets/remap3.png)
+![](../assets/remap4.png)
+ダウンロードした`json`ファイルをここでuploadする。
+![](../assets/remap5.png)
+
+
+### 2 vialの場合（より細かなカスタマイズ・リアルタイム変更！）
+
+再度キーボードをリセットし、`taclick_tkl_vial.uf2`を[ここ](https://github.com/uNikks/Pentronic-Lab/releases/download/taclick-tkl/taclick_tkl_vial.uf2)からダウンロードし、コピーペーストしてください。
+
+(vial)[https://vial.rocks/]にアクセスし、キーマップを変更してください。
+
+vialの詳しい使用法については、[サリチル酸さんの記事](https://salicylic-acid3.hatenablog.com/entry/vial-manual)をご覧ください。
