@@ -7,7 +7,7 @@ Taclick-TKLを購入していただきありがとうございます。
 - [3. 組み立て方（部品実装済みを購入された方向け）](#3-組み立て方部品実装済みを購入された方向け)
 - [4. 組み立て方（スイッチ未実装を購入された方向け）](#4-組み立て方スイッチ未実装を購入された方向け)
 - [5. キーマップを変更する](#5-キーマップを変更する)
-
+- [6. 回路図](#6-回路図)
 ## 1. 注意事項
 本製品はDIYキットです。特に、一部バージョンの製品を組み立てる際にははんだごてを含む怪我の危険性のある機器を使用する必要があります。十分注意して作業を行うようにしてください。
 
@@ -27,13 +27,18 @@ Taclick-TKLを購入していただきありがとうございます。
 
 もし不足があった場合は、お問い合わせより報告をお願いいたします。
 
+M2ネジを留めるための精密ドライバーが工具として必要です。
+また、ニッパーがあると基板の切り離しに便利です。
+
 ### タクトスイッチ未実装キットを購入された方
 
 別途タクトスイッチが89個必要です。
 [秋月電子などで販売されているものをご使用ください。](https://akizukidenshi.com/catalog/g/g103647/)
 五月祭では、使用可能なスイッチも販売しています。
 
-また、電源確認用LEDとして0603サイズのチップLEDを用意してください。
+また、電源確認用LEDとして0603サイズのチップLEDを用意してください。（なくても動作はします）
+[秋月電子などで販売されているもの](https://akizukidenshi.com/catalog/g/g118279/)で大丈夫です。
+実装済みキットでは、3.3Vの電源から1kΩの抵抗を介して、IF 30mA, VF 2.5-2.9VのLEDに接続しています。
 
 ## 3. 組み立て方（部品実装済みを購入された方向け）
 
@@ -70,7 +75,7 @@ Taclick-TKLを購入していただきありがとうございます。
 
 ![](../assets/screenshot_exploler1.png)
 
-開かない場合、接続した状態で、resetボタンを2回押せば起動するはずです。（もしくはresetボタンを押しながら）
+開かない場合、接続した状態で、resetボタンを2回押せば起動するはずです。（もしくはresetボタンを押しながら接続する。）
 
 ここに、[https://github.com/uNikks/Pentronic-Lab/releases/tag/taclick-tkl](https://github.com/uNikks/Pentronic-Lab/releases/tag/taclick-tkl)にある、`taclick_tkl_default.uf2`をダウンロードし、このエクスプローラーまたはRPI-RP2に入れてください。
 
@@ -116,7 +121,7 @@ LEDはUSBの右側のコの字型にそって実装します。LEDについて�
 ### 1 remapの場合（日本語対応！）
 remapの場合、必要なファイルがもう一つあり、`taclick-remap.json`を[ここ](https://github.com/uNikks/Pentronic-Lab/releases/download/taclick-tkl/taclick-remap.json)からダウンロードします。
 
-[サリチル酸さんの記事](https://salicylic-acid3.hatenablog.com/entry/remap-manual)**のRemapにキーマップがマージされていない場合**さ参考に、キーマップを変更してください。
+[remap](https://remap-keys.app/)にアクセスし、[サリチル酸さんの記事](https://salicylic-acid3.hatenablog.com/entry/remap-manual)**のRemapにキーマップがマージされていない場合**を参考に、キーマップを変更してください。
 
 ![](../assets/remap.png)
 キーボードをカスタマイズを押す
@@ -130,8 +135,15 @@ remapの場合、必要なファイルがもう一つあり、`taclick-remap.jso
 
 ### 2 vialの場合（より細かなカスタマイズ・リアルタイム変更！）
 
-再度キーボードをリセットし、`taclick_tkl_vial.uf2`を[ここ](https://github.com/uNikks/Pentronic-Lab/releases/download/taclick-tkl/taclick_tkl_vial.uf2)からダウンロードし、コピーペーストしてください。
+再度キーボードをリセットし（リセット方法は同じです）、`taclick_tkl_vial.uf2`を[ここ](https://github.com/uNikks/Pentronic-Lab/releases/download/taclick-tkl/taclick_tkl_vial.uf2)からダウンロードし、コピーペーストしてください。
 
-(vial)[https://vial.rocks/]にアクセスし、キーマップを変更してください。
+[vial](https://vial.rocks/)にアクセスし、キーマップを変更してください。
 
 vialの詳しい使用法については、[サリチル酸さんの記事](https://salicylic-acid3.hatenablog.com/entry/vial-manual)をご覧ください。
+
+## 6. 回路図
+
+回路図からわかる通り、GPIOの9, 10, 11, 12番はご自由に使用いただけるピンとして、矢印キー右側にはんだ付け可能な箇所を用意しております。LEDの接続などにご自由にお使いください。
+
+![回路図1](../assets/schematic-1.png)
+![回路図2](../assets/schematic-2.png)
