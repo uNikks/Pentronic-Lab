@@ -97,7 +97,7 @@ QWERuler (基板定規) を購入していただきありがとうございま�
 
 そこで、ここにファームウェアと呼ばれるソフトウェアを書き込みます。
 
-まず、[ここ]()から、QWERulerのファームウェア(`qweruler_default.hex`)をダウンロードします。
+まず、[ここ](https://github.com/uNikks/Pentronic-Lab/releases/tag/qweruler)から、QWERulerのファームウェア(`qweruler_default.hex`)をダウンロードします。
 
 ProMicroを（付属のものの場合）USB-A to USB-Cケーブルで接続します。
 
@@ -132,7 +132,7 @@ qwerでは役に立たないので、割り当てるキーを変更しましょ�
 
 ### 1 remapの場合（日本語対応！）
 
-remapの場合、必要なファイルがもう一つあり、`qwer-remap.json`を[ここ]()からダウンロードします。
+remapの場合、必要なファイルがもう一つあり、`qwer-remap.json`を[ここ](https://github.com/uNikks/Pentronic-Lab/releases/download/qweruler/qweruler-remap.json)からダウンロードします。
 
 [remap](https://remap-keys.app/)にアクセスし、[サリチル酸さんの記事](https://salicylic-acid3.hatenablog.com/entry/remap-manual)**のRemapにキーマップがマージされていない場合**を参考に、キーマップを変更してください。
 
@@ -146,7 +146,7 @@ remapの場合、必要なファイルがもう一つあり、`qwer-remap.json`�
 
 ### 2 vialの場合（より細かなカスタマイズ・リアルタイム変更！）
 
-再度タクトスイッチから、キーボードをリセットし、`qweruler_vial.hex`を[ここ]()からダウンロードし、書き込みを同じ方法で行ってください。
+再度タクトスイッチから、キーボードをリセットし、`qweruler_vial.hex`を[ここ](https://github.com/uNikks/Pentronic-Lab/releases/download/qweruler/qweruler_vial.hex)からダウンロードし、書き込みを同じ方法で行ってください。
 
 [vial](https://vial.rocks/)にアクセスし、キーマップを変更してください。
 
