@@ -1,5 +1,6 @@
 # Kaomoji-Keyboards 取扱説明書
 Kaomoji-Keyboards(オリジナルマクロパッド) を購入していただきありがとうございます。
+<img src="../assets/kaomoji.png" alt="alt text" style="max-width: 640px;">
 
 ## 1. 注意事項
 
