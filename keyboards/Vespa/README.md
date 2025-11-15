@@ -171,7 +171,7 @@ Vespaは最大5台のデバイスとペアリングできます．
 
 スリープ機能をオフにする場合，以下の手順で行います:
 
-1. [ファームウェアのダウンロードページ](https://github.com/object1037/vespa-zmk-module/releases/tag/v1.1)から，`vespa_firmware.zip`をダウンロードします．
+1. [ファームウェアのダウンロードページ](https://github.com/object1037/vespa-zmk-module/releases/latest)から，`vespa_firmware.zip`をダウンロードします．
 2. ダウンロードしたZIPファイルを解凍し，中に`vespa_fw_caffeinated.uf2`というファイルが含まれていることを確認します．
 3. キーボードをUSBケーブルでパソコンに接続します．
 4. キーボードの四隅のキーを3秒以上同時に押し続けます．
