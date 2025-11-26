@@ -1,6 +1,6 @@
 # kokonotsu User Guide
 
-nurikabeをご購入いただきありがとうございます。
+kokonotsu をご購入いただきありがとうございます。
 
 ## 注意
 
