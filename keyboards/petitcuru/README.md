@@ -74,7 +74,7 @@ RP2040-zeroを裏側にピンヘッダに対して差し込み、はんだ付け
 ### 4. ファームウェアを書き込む
 組み立て前にファームウェアを書き込んでしまいましょう。
 
-まず、[ここ](https://github.com/uNikks/Pentronic-Lab/release/tag/petitcuru)から、ぷちくるのファームウェア(`petitcuru_vial.uf2`)をダウンロードします。
+まず、[ここ](https://github.com/uNikks/Pentronic-Lab/releases/tag/petitcuru)から、ぷちくるのファームウェア(`petitcuru_vial.uf2`)をダウンロードします。
 
 パソコンとUSB-Cで接続します。
 
