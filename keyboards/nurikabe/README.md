@@ -60,7 +60,7 @@ nurikabeをご購入いただきありがとうございます。
 
 PC上にフォルダ（ドライブ）が開かない場合：接続した状態で、USB端子の隣にある**RESETボタンを2回**押してください。「RPI-RP2」というドライブとして認識されます。
 
-起動したら、[https://github.com/uNikks/Pentronic-Lab/releases/tag/nurikabe](https://github.com/uNikks/Pentronic-Lab/releases/tag/nurikabe)にある[nurikabe_defult.uf2](https://github.com/uNikks/Pentronic-Lab/releases/download/nurikabe/nurikabe_default.uf2) をダウンロードします。
+起動したら、[https://github.com/uNikks/Pentronic-Lab/releases/tag/nurikabe](https://github.com/uNikks/Pentronic-Lab/releases/tag/nurikabe)にある[Remap_nurikabe.uf2]([https://github.com/uNikks/Pentronic-Lab/releases/download/nurikabe/nurikabe_default.uf2](https://github.com/uNikks/Pentronic-Lab/releases/download/nurikabe/Remap_nurikabe.uf2)) をダウンロードします。
 
 ダウンロードした nurikabe_defult.uf2  ファイルを、先ほど開いた「RPI-RP2」ドライブ（エクスプローラー）へドラッグ＆ドロップしてください。
 自動的に再起動し、キーボードとして認識されれば成功です！
