@@ -1,7 +1,7 @@
 {
     "name": "QWERuler premium",
-    "vendorId": "0x5045",
-    "productId": "0x5052",
+    "vendorId": "0x7065",
+    "productId": "0x7464",
     "lighting": "none",
     "matrix": {"rows": 1, "cols": 4},
     "layouts": {

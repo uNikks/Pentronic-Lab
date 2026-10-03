@@ -46,7 +46,7 @@ firmware/qweruler_premium/
 | 項目 | 値 | 場所 |
 |---|---|---|
 | 製品名 / メーカー名 | `QWERuler premium` / `Pentronic Lab.` | `keyboard.json` |
-| USB VID / PID | `0x5045` / `0x5052` | `keyboard.json`、`keymaps/vial/vial.json` |
+| USB VID / PID | `0x7065` / `0x7464` | `keyboard.json`、`keymaps/vial/vial.json` |
 | Vial キーボード UID | `0x55, 0x74, 0xCE, 0xFF, 0xEA, 0x6D, 0xD0, 0x0A` | `keymaps/vial/config.h` |
 | Vial のロック解除 | SW1（左端）と SW4（右端）を同時に長押し | `keymaps/vial/config.h` |
 | レイヤー数 | 4（レイヤー 0 が QWER、1〜3 は透過） | `keymaps/vial/` |
@@ -60,8 +60,9 @@ firmware/qweruler_premium/
 
 ### USB VID / PID について
 
-`0x5045` / `0x5052` は仮に決めた値です（USB-IF から割り当てを受けた ID ではありません。QMK の自作キーボードでは一般的な運用です）。
-GitHub のコード検索で確認した範囲では、qmk_firmware に同じ VID を使っているキーボードはありません。
+VID `0x7065` は QWERuler rev2 のファーム（リリース `qweruler_rev2` の `qweruler_rev2_vial.uf2`、VID `0x7065` / PID `0x7463`）と同じ値です。
+PID は rev2 と配線が違う（rev2 は 2×2 マトリクス＋ダイオード、premium は 4 キー直結）ので、取り違えないよう `0x7464` にしました。
+どちらも USB-IF から割り当てを受けた ID ではありません（QMK の自作キーボードでは一般的な運用です）。
 変更する場合は、**`keyboard.json` の `usb.vid` / `usb.pid` と、`keymaps/vial/vial.json` の `vendorId` / `productId` を必ず両方とも同じ値に**書き換えてください。
 Vial はキーボードを UID で識別するので、VID / PID を変えても Vial での認識には影響しません。
 

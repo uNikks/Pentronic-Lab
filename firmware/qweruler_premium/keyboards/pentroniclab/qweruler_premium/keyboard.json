@@ -4,8 +4,8 @@
     "url": "https://github.com/uNikks/Pentronic-Lab",
     "maintainer": "uNikks",
     "usb": {
-        "vid": "0x5045",
-        "pid": "0x5052",
+        "vid": "0x7065",
+        "pid": "0x7464",
         "device_version": "1.0.0"
     },
     "processor": "RP2040",
