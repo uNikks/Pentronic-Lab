@@ -1,0 +1,12 @@
+{
+    "name": "QWERuler premium",
+    "vendorId": "0x5045",
+    "productId": "0x5052",
+    "lighting": "none",
+    "matrix": {"rows": 1, "cols": 4},
+    "layouts": {
+        "keymap": [
+            ["0,0", "0,1", "0,2", "0,3"]
+        ]
+    }
+}

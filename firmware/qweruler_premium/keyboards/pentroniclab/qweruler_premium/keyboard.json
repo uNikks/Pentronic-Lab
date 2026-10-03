@@ -1,0 +1,33 @@
+{
+    "keyboard_name": "QWERuler premium",
+    "manufacturer": "Pentronic Lab.",
+    "url": "https://github.com/uNikks/Pentronic-Lab",
+    "maintainer": "uNikks",
+    "usb": {
+        "vid": "0x5045",
+        "pid": "0x5052",
+        "device_version": "1.0.0"
+    },
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "features": {
+        "bootmagic": true,
+        "extrakey": true,
+        "mousekey": true
+    },
+    "matrix_pins": {
+        "direct": [
+            ["GP8", "GP7", "GP6", "GP5"]
+        ]
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label": "SW1", "matrix": [0, 0], "x": 0, "y": 0},
+                {"label": "SW2", "matrix": [0, 1], "x": 1, "y": 0},
+                {"label": "SW3", "matrix": [0, 2], "x": 2, "y": 0},
+                {"label": "SW4", "matrix": [0, 3], "x": 3, "y": 0}
+            ]
+        }
+    }
+}
