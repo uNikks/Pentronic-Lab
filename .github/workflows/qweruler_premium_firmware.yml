@@ -1,0 +1,104 @@
+name: QWERuler premium firmware
+
+on:
+  pull_request:
+    paths:
+      - 'firmware/qweruler_premium/**'
+      - '.github/workflows/qweruler_premium_firmware.yml'
+  push:
+    tags:
+      - 'qweruler_premium*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  VIAL_QMK_REPO: https://github.com/vial-kb/vial-qmk.git
+  VIAL_QMK_BRANCH: vial
+  KEYBOARD: pentroniclab/qweruler_premium
+  KEYMAP: vial
+  FIRMWARE_NAME: qweruler_premium_vial
+  # Title of the draft release created on tag push. Bump it for a new firmware revision.
+  RELEASE_NAME: QWERuler premium Firmware rev 1
+
+jobs:
+  build:
+    name: Build Vial firmware
+    runs-on: ubuntu-latest
+    # Same qmk_cli image (pinned by digest) that vial-qmk's own CI uses (.github/workflows/ci.yml on the vial branch).
+    container: ghcr.io/qmk/qmk_cli@sha256:2dc05fc9f32efebd6b05c2b8676ee548358bc7e151e9dbf4dac6b6eed4513b07
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout Pentronic-Lab
+        uses: actions/checkout@v4
+        with:
+          path: pentronic-lab
+          persist-credentials: false
+
+      - name: Clone vial-qmk
+        run: |
+          git config --global --add safe.directory '*'
+          git clone --depth 1 --branch "${VIAL_QMK_BRANCH}" "${VIAL_QMK_REPO}" vial-qmk
+          echo "vial-qmk commit: $(git -C vial-qmk rev-parse HEAD)"
+
+      - name: Fetch vial-qmk submodules
+        working-directory: vial-qmk
+        run: make git-submodule
+
+      - name: Add keyboard definition
+        run: cp -rv pentronic-lab/firmware/qweruler_premium/keyboards/. vial-qmk/keyboards/
+
+      - name: Build
+        working-directory: vial-qmk
+        run: make "${KEYBOARD}:${KEYMAP}"
+
+      - name: Collect firmware
+        run: |
+          mkdir -p dist
+          cp "vial-qmk/${KEYBOARD//\//_}_${KEYMAP}.uf2" "dist/${FIRMWARE_NAME}.uf2"
+          ls -l dist
+          sha256sum dist/*.uf2 | tee -a "${GITHUB_STEP_SUMMARY}"
+
+      - name: Upload firmware artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FIRMWARE_NAME }}
+          path: dist/${{ env.FIRMWARE_NAME }}.uf2
+          if-no-files-found: error
+
+  release:
+    name: Create draft release
+    needs: build
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/qweruler_premium')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Pentronic-Lab
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Download firmware artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.FIRMWARE_NAME }}
+          path: dist
+
+      - name: Create draft release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          name: ${{ env.RELEASE_NAME }}
+          body_path: firmware/qweruler_premium/RELEASE_NOTES.md
+          files: dist/${{ env.FIRMWARE_NAME }}.uf2
+          fail_on_unmatched_files: true
